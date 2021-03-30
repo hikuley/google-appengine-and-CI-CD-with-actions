@@ -1,10 +1,8 @@
 package com.kuleysoft;
 
 
-import com.google.cloud.firestore.Firestore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +20,6 @@ public class SpringbootApplication {
 @RestController
 class HelloController {
 
-    @Autowired
-    Firestore firestore;
-
-
     private static Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     @GetMapping("/")
@@ -40,7 +34,6 @@ class HelloController {
         logger.info("Called second page");
         return "Hello world!";
     }
-
 }
 
 

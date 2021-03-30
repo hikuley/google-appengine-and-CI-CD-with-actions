@@ -1,6 +1,6 @@
-service: staing-recipe-app
+#service: staing-recipe-app
 runtime: java11
-env: flex
+env: standard
 runtime_config:
   jdk: openjdk11
 env_variables:
