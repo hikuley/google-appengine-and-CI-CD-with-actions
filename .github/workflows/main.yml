@@ -1,4 +1,4 @@
-- name: Deploy google app engine
+name: Deploy google app engine
   # You may pin to the exact commit or the version.
   # uses: vijayp23/deploy-gae-action@bfbd0510d7dd1ccc2b2537acbbd080becf418f0d
   uses: vijayp23/deploy-gae-action@1.0.2
