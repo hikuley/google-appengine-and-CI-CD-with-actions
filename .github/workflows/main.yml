@@ -1,5 +1,5 @@
 name: Deploy google app engine
-  uses: atRobertoFlores/gae_deploy_action@master
+uses: vijayp23/deploy-gae-action@1.0.1
   with:
     service-account: ${{ secrets.SERVICE_ACCOUNT }}
     project-id: ${{ secrets.PROJECT_ID }}
