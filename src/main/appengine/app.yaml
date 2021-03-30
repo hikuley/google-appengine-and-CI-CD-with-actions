@@ -1,4 +1,4 @@
-#service: staing-recipe-app
+service: staing-recipe-app
 runtime: java11
 env: standard
 runtime_config:
