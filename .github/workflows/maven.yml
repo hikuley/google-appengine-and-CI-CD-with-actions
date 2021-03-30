@@ -44,7 +44,7 @@ jobs:
         # Delete versions which are not receiving any traffic
         delete-previous-versions: # optional
         # Name of the service which previous versions needs to be deleted
-        service-name: # optional, default is default
+        service-name: staging
         # Disables using of cache when building project
         no-cache: false
         # Debug action
