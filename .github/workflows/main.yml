@@ -1,11 +1,11 @@
 name: Deploy google app engine
-uses: vijayp23/deploy-gae-action@1.0.1
+ uses: vijayp23/deploy-gae-action@1.0.1
   with:
-    service-account: ${{ secrets.SERVICE_ACCOUNT }}
-    project-id: ${{ secrets.PROJECT_ID }}
-    config-files: '../../src/main/appengine/app.yml'
-    service-version: # optional, default is
-    delete-previous-versions: # optional
-    service-name: # optional, default is default
-    no-cache: # optional
-    debug: # optional
+   service-account: ${{ secrets.SERVICE_ACCOUNT }}
+   project-id: ${{ secrets.PROJECT_ID }}
+   config-files: '../../src/main/appengine/app.yml'
+   service-version: # optional, default is
+   delete-previous-versions: # optional
+   service-name: # optional, default is default
+   no-cache: # optional
+   debug: # optional
