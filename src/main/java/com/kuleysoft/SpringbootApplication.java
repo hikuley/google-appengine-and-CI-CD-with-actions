@@ -26,7 +26,7 @@ class HelloController {
     public String hello() {
         logger.info("Called index page, x y z");
 
-        return "Londra'dan Selamlar Google App Engine'e ve ayrıca github actions!!!!";
+        return "Londra'dan Selamlar Google App Engine'e ve ayrıca github actions!!!! teststs";
     }
 
     @GetMapping("/hello")
