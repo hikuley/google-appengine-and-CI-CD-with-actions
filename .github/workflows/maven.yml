@@ -46,7 +46,7 @@ jobs:
         # Name of the service which previous versions needs to be deleted
         service-name: # optional, default is default
         # Disables using of cache when building project
-        no-cache: # optional
+        no-cache: false
         # Debug action
-        debug: # optional
+        debug: true
 
