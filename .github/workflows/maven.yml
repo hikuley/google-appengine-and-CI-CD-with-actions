@@ -28,25 +28,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy google app engine
-      # You may pin to the exact commit or the version.
-      # uses: vijayp23/deploy-gae-action@bfbd0510d7dd1ccc2b2537acbbd080becf418f0d
-      uses: vijayp23/deploy-gae-action@1.0.2
-      with:
-        # Service account file
-        service-account: ${{ secrets.SERVICE_ACCOUNT }}
-        # Project id
-        project-id: ${{ secrets.PROJECT_ID }}
-        # The yaml files for the services or configurations you want to deploy
-        config-files: './src/main/appengine/app.yaml'
-        # The version of the app that will be created or replaced by this deployment
-        service-version: # optional, default is
-        # Delete versions which are not receiving any traffic
-        delete-previous-versions: # optional
-        # Name of the service which previous versions needs to be deleted
-        service-name: staging
-        # Disables using of cache when building project
-        no-cache: false
-        # Debug action
-        debug: true
+      - name: Deploy App Engine
+          id: deploy
+          uses: claudiuri/deploy-gae-action@master
+          with:
+            service-account: ${{ secrets.SERVICE_ACCOUNT }}
+            project-id: ${{ secrets.PROJECT_ID }}
 
