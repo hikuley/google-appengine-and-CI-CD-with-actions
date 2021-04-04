@@ -39,12 +39,17 @@ jobs:
 
 #      - run: gcloud info
 
+      - name: GCP Authenticate
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "273.0.0"
+          service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
+
+
       - name: Set GCP_PROJECT
         env:
           GCP_PROJECT: ${{ secrets.SERVICE_ACCOUNT }}
         run: gcloud --quiet config set project ${GCP_PROJECT}
-
-
 
       - name: Deploy to GAE
         run: gcloud app deploy ~/src/main/appengine/app.yaml
