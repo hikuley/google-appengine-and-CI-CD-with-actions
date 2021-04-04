@@ -33,10 +33,9 @@ jobs:
         with:
           version: '290.0.1'
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
           export_default_credentials: true
       - run: gcloud info
-
 
       - name: Deploy to GAE
         run: gcloud app deploy ~/src/main/appengine/app.yaml
