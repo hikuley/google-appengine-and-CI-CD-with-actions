@@ -26,7 +26,7 @@ class HelloController {
     public String hello() {
         logger.info("Called index page, x y z");
 
-        return "Test Rest Seks!";
+        return "Test Rest Seks! test";
     }
 
     @GetMapping("/hello")
