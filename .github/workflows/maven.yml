@@ -21,7 +21,9 @@ jobs:
       with:
         java-version: 11
     - name: Build with Maven
-      run: mvn -B clean install --file pom.xml
+      run: mvn -B clean install --file pom.xml -DskipTests
+    - name: Integration Tests
+      run: mvn -B test --file pom.xml
 
   deploy:
     needs: [build]
@@ -49,7 +51,7 @@ jobs:
         run: gcloud --quiet config set project ${GCP_PROJECT}
 
       - name: Deploy to GAE
-        run: mvn -B package appengine:deploy --file pom.xml
+        run: mvn -B package appengine:deploy --file pom.xml -DskipTests
 
 
 
