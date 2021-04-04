@@ -38,3 +38,8 @@ jobs:
       - run: gcloud info
 
 
+      - name: Deploy to GAE
+        run: gcloud app deploy ~/src/main/appengine/app.yaml
+
+
+
