@@ -23,5 +23,27 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-#  deploy:
-#    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: composer install -n --prefer-dist
+
+      - name: GCP Authenticate
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "273.0.0"
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set GCP_PROJECT
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+        run: gcloud --quiet config set project ${GCP_PROJECT}
+
+      - name: Deploy to GAE
+        run: gcloud app deploy ~/src/main/appengine/app.yaml
+
+
+
