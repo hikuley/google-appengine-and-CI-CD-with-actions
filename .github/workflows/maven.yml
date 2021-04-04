@@ -23,13 +23,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-  investigation:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-    - name: List Files
-      run: cd -alrt
-
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
@@ -58,7 +51,7 @@ jobs:
         run: gcloud --quiet config set project ${GCP_PROJECT}
 
       - name: Deploy to GAE
-        run: gcloud app deploy /src/main/appengine/app.yaml
+        run: gcloud app deploy ./src/main/appengine/app.yaml
 
 
 
