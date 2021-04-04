@@ -24,6 +24,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
   investigation:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - name: List Files
