@@ -38,8 +38,8 @@ jobs:
       - run: gcloud info
 
       - name: Set GCP_PROJECT
-          env:
-            GCP_PROJECT: ${{ secrets.SERVICE_ACCOUNT }}
+        env:
+          GCP_PROJECT: ${{ secrets.SERVICE_ACCOUNT }}
           run: gcloud --quiet config set project ${GCP_PROJECT}
 
 
