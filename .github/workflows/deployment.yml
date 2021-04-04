@@ -37,7 +37,7 @@ jobs:
       run: mvn -B test --file pom.xml
 
   deploy:
-    needs: [build, tests]
+    needs: [build, test]
     runs-on: ubuntu-latest
 
     steps:
