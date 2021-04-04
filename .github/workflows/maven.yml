@@ -35,12 +35,15 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
           export_default_credentials: true
-      - run: gcloud info
+
+
+#      - run: gcloud info
 
       - name: Set GCP_PROJECT
         env:
           GCP_PROJECT: ${{ secrets.SERVICE_ACCOUNT }}
-          run: gcloud --quiet config set project ${GCP_PROJECT}
+        run: gcloud --quiet config set project ${GCP_PROJECT}
+
 
 
       - name: Deploy to GAE
