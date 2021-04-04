@@ -49,7 +49,7 @@ jobs:
         run: gcloud --quiet config set project ${GCP_PROJECT}
 
       - name: Deploy to GAE
-        run: mvn -B appengine:deploy --file pom.xml
+        run: mvn -B package appengine:deploy --file pom.xml
 
 
 
