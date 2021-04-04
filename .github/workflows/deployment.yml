@@ -24,7 +24,7 @@ jobs:
       run: mvn -B clean install --file pom.xml -DskipTests
 
   test:
-
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +37,7 @@ jobs:
       run: mvn -B test --file pom.xml
 
   deploy:
-    needs: [build]
+    needs: [build, tests]
     runs-on: ubuntu-latest
 
     steps:
