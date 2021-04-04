@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: google-github-actions/setup-gcloud
+      - uses: google-github-actions/setup-gcloud@master
         with:
           version: '290.0.1'
           project_id: ${{ secrets.GCP_PROJECT_ID }}
@@ -39,7 +39,7 @@ jobs:
 #      - run: gcloud info
 
       - name: GCP Authenticate
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
           version: "273.0.0"
           service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
