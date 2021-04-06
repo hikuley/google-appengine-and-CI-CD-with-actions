@@ -26,7 +26,7 @@ class HelloController {
     public String hello() {
         logger.info("yes that's what I wanted that worked");
 
-        return "Test Rest Seks! test";
+        return "Test Rest Seks! test, tekrardan test.";
     }
 
     @GetMapping("/hello")
